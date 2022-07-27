@@ -8,10 +8,11 @@ body {
     background-image: url(../img/bg.jpg);
     background-size: cover;
     background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1760px;
     padding: 0 15px;
     margin-left: auto;
     margin-right: auto;
@@ -34,6 +35,20 @@ body {
     text-transform: uppercase;
 }
 
+.btn {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 13px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid #FFFFFF;
+    color: inherit;
+    padding: 19px 30px 16px;
+}
+
 /* HEADER */
 
 .header {
@@ -49,6 +64,7 @@ body {
 
 .header__menu-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 60px;
 }
 
@@ -64,3 +80,96 @@ body {
 }
 
 /* PROMO */
+
+.promo {
+    margin-bottom: 25px;
+}
+
+.promo__inner {
+    text-align: center;
+}
+
+.promo__title {
+    max-width: 818px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 120px;
+    line-height: 132px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+}
+.promo__btn {
+    
+    margin-bottom: 40px;
+}
+
+@keyframes scroll-anim {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    20% { opacity: 0; }
+    100% {opacity: 0; }
+}
+
+.promo__links {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.promo__links::before,
+.promo__links::after {
+    position: absolute;
+    opacity: 0;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    animation-name: scroll-anim;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.promo__links::before {
+    bottom: -15px;
+}
+.promo__links::after {
+    animation-delay: .2s;
+    bottom: -25px;
+}
+.promo__links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.promo__links-item {
+}
+.promo__links-item-link {
+}
+.promo__links-item-link-img {
+}
+.promo__links-scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.promo__links-more {
+    position: relative;
+    color: inherit;
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transform-origin: 0 0;
+    transform: translateX(100%) rotate(90deg);
+}
+.promo__links-more::after {
+    position: absolute;
+    content: url(../img/arrow.svg);
+    margin-left: 20px;
+    transform: rotate(-90deg);
+}
