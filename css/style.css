@@ -1,10 +1,13 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', cursive;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 23px;
-    color: #636363;
+    font-size: 18px;
+    line-height: 170%;
+    color: #FFFFFF;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: top center;
 }
 
 .container {
@@ -25,8 +28,39 @@ body {
 }
 
 .title {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 124.41%;
-    color: #000;
+    font-size: 50px;
+    line-height: 55px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
 }
+
+/* HEADER */
+
+.header {
+    margin-top: 90px;
+    margin-bottom: 190px;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu-list {
+    display: flex;
+    gap: 60px;
+}
+
+.header__menu-link,
+.header__menu-phone {
+    font-size: 20px;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+
+/* PROMO */
