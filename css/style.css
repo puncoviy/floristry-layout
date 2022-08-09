@@ -754,7 +754,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 0 50px;
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
@@ -783,6 +783,14 @@ body {
         top: 10px;
         font-size: 160px;
         line-height: 160px;
+    }
+    .boxes__inner {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    .boxes__list {
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
@@ -822,12 +830,52 @@ body {
         font-size: 110px;
         line-height: 110px;
     }
+    .giftcards__item {
+        width: 285px;
+    }
+    .giftcards__item:nth-of-type(3) {
+        width: 350px;
+    }
+    .giftcards__item:nth-of-type(3) .giftcards__item-card {
+        height: 220px;
+    }
+    .giftcards__item:nth-of-type(3) .giftcards__item-card::before,
+    .giftcards__item:nth-of-type(3) .giftcards__item-card::after {
+        width: 82px;
+        height: 82px;
+    }
+    .giftcards__item::before {
+        height: 50px;
+        left: 18px;
+    }
+    .giftcards__item-card {
+        height: 175px;
+        margin-bottom: 50px;
+    }
+    .giftcards__item-card::before,
+    .giftcards__item-card::after {
+        width: 70px;
+        height: 70px;
+    }
+    .giftcards__item:nth-of-type(3)::before {
+        height: 60px;
+    }
+    .providers__item:nth-child(n) {
+        flex-basis: calc(50% - 33px);
+    }
+    .providers__item-img {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1150px) {
     .header__menu-list {
         gap: 0 20px;
         justify-content: center;
+    }
+    .catalogue {
+        padding-top: 50px;
+        padding-bottom: 100px;
     }
     .catalogue__list {
         width: 720px;
@@ -844,6 +892,71 @@ body {
     }
     .catalogue__item:nth-of-type(even) {
         order: 2;
+    }
+    .boxes__imb-box {
+        width: 90%;
+    }
+    .boxes__img {
+        width: 100%;
+    }
+    .offer {
+        margin-bottom: 100px;
+    }
+    .boxes {
+        margin-bottom: 100px;
+    }
+    .giftcards {
+        margin-bottom: 100px;
+    }
+    .providers {
+        margin-bottom: 100px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .giftcards__item {
+        width: 195px;
+    }
+    .giftcards__item:nth-of-type(3) {
+        width: 245px;
+    }
+    .giftcards__item-card {
+        height: 125px;
+    }
+    .giftcards__item:nth-of-type(3) .giftcards__item-card {
+        height: 160px;
+    }
+    .giftcards__item-card::before,
+    .giftcards__item-card::after {
+        width: 40px;
+        height: 40px;
+    }
+    .giftcards__item:nth-of-type(3) .giftcards__item-card::before,
+    .giftcards__item:nth-of-type(3) .giftcards__item-card::after {
+        width: 52px;
+        height: 52px;
+    }
+    .giftcards__item-logo {
+        width: 100px;
+    }
+    .giftcards__item:nth-of-type(3) .giftcards__item-logo {
+        width: 145px;
+    }
+    .giftcards__item-text {
+        padding: 0 10px;
+    }
+    .giftcards__item:nth-of-type(3) .giftcards__item-text {
+        padding: 0 28px;
+    }
+    .giftcards__item-btn:not(.giftcards__item:nth-of-type(3) .giftcards__item-btn) {
+        margin-bottom: 45px;
+    }
+    .giftcards__item::before {
+        height: 35px;
+        left: 10px;
+    }
+    .giftcards__item:nth-of-type(3)::before {
+        height: 43px;
     }
 }
 
@@ -883,6 +996,50 @@ body {
     }
     .catalogue__item.break {
         display: none;
+    }
+    .boxes__inner {
+        gap: 25px;
+    }
+    .boxes__imb-box::after {
+        height: 88%;
+        left: 20px;
+    }
+    .giftcards__list {
+        flex-direction: column;
+    }
+    .giftcards__item:nth-of-type(3) {
+        order: 3;
+    }
+    .giftcards__item,
+    .giftcards__item:nth-of-type(3) {
+        width: 280px;
+    }
+    .giftcards__item::before,
+    .giftcards__item:nth-of-type(3) .giftcards__item::before {
+        height: 50px;
+    }
+    .giftcards__item-card,
+    .giftcards__item:nth-of-type(3) .giftcards__item-card {
+        height: 170px;
+    }
+    .giftcards__item-text {
+        margin-bottom: 50px;
+        position: relative;
+        z-index: 1;
+    }
+    .giftcards__item-logo,
+    .giftcards__item:nth-of-type(3) .giftcards__item-logo {
+        width: 150px;
+    }
+    .giftcards__item-card::before,
+    .giftcards__item-card::after ,
+    .giftcards__item:nth-of-type(3) .giftcards__item-card::before,
+    .giftcards__item:nth-of-type(3) .giftcards__item-card::after {
+        width: 70px;
+        height: 70px;
+    }
+    .giftcards__item-btn {
+        margin-bottom: 45px;
     }
 }
 
@@ -929,6 +1086,9 @@ body {
         font-size: 36px;
         line-height: 42px;
     }
+    .boxes__item-img {
+        width: 80px;
+    }
 }
 
 @media (max-width: 460px) {
@@ -939,5 +1099,8 @@ body {
     }
     .catalogue__title::after {
         font-size: 36px;
+    }
+    .boxes__item-img {
+        width: 55px;
     }
 }
