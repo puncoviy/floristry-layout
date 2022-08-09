@@ -78,6 +78,77 @@ body {
     transform: translateX(-50%);
 }
 
+.burger-box {
+    margin-left: auto;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    border: 2px solid #fff;
+    transition: border-color .7s;
+}
+
+.burger-menu {
+    top: 17px;
+    left: 7px;
+    height: 3px;
+    width: 23px;
+    background-color: #fff;
+    border-radius: 3px;
+    margin: auto 0;
+    position: relative;
+    transition: all .7s;
+}
+
+.burger-menu::before,
+.burger-menu::after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 23px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all .7s;
+}
+
+.burger-box .burger-menu.active {
+    background-color: transparent;
+}
+
+@keyframes rotate-clockworth {
+    0% {transform: rotate(0);}
+    70% {transform: rotate(0);}
+    100% {transform: rotate(45deg);}
+}
+
+@keyframes rotate-counterclockworth {
+    0% {transform: rotate(0);}
+    70% {transform: rotate(0);}
+    100% {transform: rotate(-45deg);}
+}
+
+.burger-menu.active::before {
+    top: 0;
+    animation: rotate-clockworth 1s forwards;
+}
+
+.burger-menu.active::after {
+    top: 0;
+    animation: rotate-counterclockworth 1s forwards;
+}
+
+.burger-menu::before {
+    top: -8px;
+}
+
+.burger-menu::after {
+    top: 8px;
+}
+
 /* HEADER */
 
 .first-screen {
@@ -106,6 +177,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
 }
 
 .header__menu-list {
@@ -123,6 +195,25 @@ body {
     text-decoration: none;
     text-transform: uppercase;
 
+}
+
+.header-icon-box {
+    display: none;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    transition: border-color .7s;
+}
+
+.header-icon {
+    width: 23px;
+    height: 23px;
+    transition: fill .7s;
+    fill: #fff;
 }
 
 /* PROMO */
@@ -660,4 +751,32 @@ body {
     justify-content: center;
     align-items: center;
     gap: 50px;
+}
+
+@media (max-width: 925px) {
+    .header__menu-list {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px 20px;
+        border-radius: 50px;
+        left: 30px;
+        top: 120px;
+        opacity: 0;
+        transition: all .7s;
+        z-index: -1;
+    }
+    .header__menu-list.active {
+        opacity: 1;
+        z-index: 1;
+        top: 150px;
+    }
+    .burger-box {
+        display: block;
+    }
+    .header-icon-box {
+        display: flex;
+    }
+    .header__menu-phone {
+        display: none;
+    }
 }
