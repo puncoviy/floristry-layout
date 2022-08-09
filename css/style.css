@@ -55,6 +55,11 @@ body {
     border: 1px solid #FFFFFF;
     color: inherit;
     padding: 19px 30px 16px;
+    transition: padding 1s cubic-bezier(.01,.55,.54,.94);
+}
+
+.btn:hover {
+    padding: 19px 50px 16px;
 }
 
 .small__title {
@@ -242,7 +247,6 @@ body {
     margin-bottom: 80px;
 }
 .promo__btn {
-    
     margin-bottom: 40px;
 }
 
@@ -298,9 +302,22 @@ body {
     left: 50%;
     transform: translateX(-50%);
 }
+.promo__links-scroll.small {
+    height: 46px;
+    display: none;
+}
+
+@keyframes shake {
+    0% {transform: rotate(-90deg) translateY(0);}
+    40% {transform: rotate(-90deg) translateY(50%);}
+    50% {transform: rotate(-90deg) translateY(30%);}
+    60% {transform: rotate(-90deg) translateY(50%);}
+    100% {transform: rotate(-90deg) translateY(0);}
+}
 
 .promo__links-more {
     position: relative;
+    height: 60px;
     color: inherit;
     font-size: 20px;
     line-height: 22px;
@@ -314,6 +331,9 @@ body {
     content: url(../img/arrow.svg);
     margin-left: 20px;
     transform: rotate(-90deg);
+}
+.promo__links-more:hover::after {
+    animation: shake 1s;
 }
 
 /* CATALOGUE */
@@ -350,8 +370,9 @@ body {
     flex-direction: column;
     gap: 40px 20px;
     height: 1050px;
-    margin: 0 80px;
+    margin: 0 auto;
     counter-reset: catalogue-count;
+    width: 1440px;
 }
 
 .catalogue__item {
@@ -758,12 +779,49 @@ body {
     gap: 50px;
 }
 
+@media (max-width: 1700px) {
+    .catalogue__title::after {
+        top: 10px;
+        font-size: 160px;
+        line-height: 160px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .catalogue__list {
+        width: 1070px;
+        height: 1335px;
+    }
+    .catalogue__item:nth-of-type(4n+1),
+    .catalogue__item:nth-of-type(4n+2),
+    .catalogue__item:nth-of-type(4n+3),
+    .catalogue__item:nth-of-type(4n) {
+        order: unset;
+    }
+    .catalogue__item:nth-of-type(3n+1) {
+        order: 1;
+    }
+    .catalogue__item:nth-of-type(3n+2) {
+        order: 2;
+    }
+    .catalogue__item:nth-of-type(3n) {
+        order: 3;
+    }
+    .catalogue__item:nth-of-type(8) {
+        order: 3;
+    }
+}
+
 @media (max-width: 1300px) {
     .header-icon-box {
         display: flex;
     }
     .header__menu-phone {
         display: none;
+    }
+    .catalogue__title::after {
+        font-size: 110px;
+        line-height: 110px;
     }
 }
 
@@ -772,9 +830,61 @@ body {
         gap: 0 20px;
         justify-content: center;
     }
+    .catalogue__list {
+        width: 720px;
+        height: 1880px;
+    }
+    .catalogue__item:nth-of-type(3n+1),
+    .catalogue__item:nth-of-type(3n+2),
+    .catalogue__item:nth-of-type(3n),
+    .catalogue__item:nth-of-type(8) {
+        order: unset;
+    }
+    .catalogue__item:nth-of-type(odd) {
+        order: 1;
+    }
+    .catalogue__item:nth-of-type(even) {
+        order: 2;
+    }
+}
+
+@media (max-width: 900px) {
+    .promo__title {
+        max-width: 629px;
+        font-size: 80px;
+        line-height: 100px;
+    }
+    .promo__links-scroll.big {
+        display: none;
+    }
+    .promo__links-scroll.small {
+        display: block;
+    }
+    .catalogue__title::after {
+        font-size: 70px;
+        line-height: 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .catalogue__list {
+        flex-wrap: nowrap;
+        height: unset;
+        width: fit-content;
+    }
+    .catalogue__item:nth-of-type(odd),
+    .catalogue__item:nth-of-type(even) {
+        order: unset;
+    }
+    .catalogue__item.break {
+        display: none;
+    }
 }
 
 @media (max-width: 640px) {
+    .first-screen {
+        padding-top: 30px;
+    }
     .header__menu-list {
         position: absolute;
         background-color: rgba(255, 255, 255, 0.9);
@@ -796,5 +906,25 @@ body {
     }
     .header__menu-link {
         color: #000;
+    }
+    .promo__title {
+        max-width: 470px;
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .catalogue__title::after {
+        font-size: 50px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 460px) {
+    .promo__title {
+        max-width: 315px;
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .catalogue__title::after {
+        font-size: 36px;
     }
 }
