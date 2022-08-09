@@ -489,8 +489,7 @@ body {
 .offer__title {
     margin-bottom: 56px;
 }
-.title {
-}
+
 .offer__text {
     margin-bottom: 30px;
 }
@@ -864,6 +863,12 @@ body {
         font-size: 70px;
         line-height: 70px;
     }
+    .offer__img-box {
+        width: 90%;
+    }
+    .offer__img {
+        width: 100%;
+    }
 }
 
 @media (max-width: 767px) {
@@ -915,6 +920,14 @@ body {
     .catalogue__title::after {
         font-size: 50px;
         line-height: 50px;
+    }
+    .offer__img-box::after {
+        left: 15px;
+        top: 7px;
+    }
+    .title {
+        font-size: 36px;
+        line-height: 42px;
     }
 }
 
